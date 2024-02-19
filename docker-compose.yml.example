@@ -18,7 +18,7 @@ services:
     image: 
     container_name: 
     ports:
-      - 54321:5432
+      
     environment:
       - POSTGRES_PASSWORD=
       - POSTGRES_USER=
