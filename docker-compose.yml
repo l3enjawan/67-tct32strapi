@@ -5,7 +5,7 @@ services:
     image: benjawan/app:1.0.0
     container_name: my-app
     ports:
-      - 1337:1337
+      - ${PORT_MYAPP}:1337
     environment:
       - DATABASE_CLIENT=${DATABASE_CLIENT}
       - DATABASE_HOST=${DATABASE_HOST}
@@ -18,7 +18,7 @@ services:
     image: postgres:latest
     container_name: my-db
     ports:
-      - 54321:5432
+      - ${PORT_MYDB}:5432
     environment:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_USER=${DATABASE_USERNAME}
