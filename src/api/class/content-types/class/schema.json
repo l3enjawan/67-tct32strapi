@@ -11,18 +11,5 @@
     "draftAndPublish": false
   },
   "pluginOptions": {},
-  "attributes": {
-    "students": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::student.student",
-      "inversedBy": "classes"
-    },
-    "teachers": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::teacher.teacher",
-      "mappedBy": "class"
-    }
-  }
+  "attributes": {}
 }
