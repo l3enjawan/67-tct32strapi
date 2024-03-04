@@ -4,7 +4,8 @@
   "info": {
     "singularName": "student",
     "pluralName": "students",
-    "displayName": "Student"
+    "displayName": "Student",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,10 +17,19 @@
       "required": true
     },
     "mobile": {
-      "type": "number",
-      "required": true,
-      "minLength": 10,
-      "maxLength": 10
+      "type": "string"
+    },
+    "rooms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::room.room",
+      "mappedBy": "student"
+    },
+    "classes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::class.class",
+      "inversedBy": "students"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "room",
     "pluralName": "rooms",
-    "displayName": "Room"
+    "displayName": "Room",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,24 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "student": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::student.student",
+      "inversedBy": "rooms"
+    },
+    "subjects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subject.subject",
+      "mappedBy": "room"
+    },
+    "classes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::class.class",
+      "mappedBy": "rooms"
     }
   }
 }

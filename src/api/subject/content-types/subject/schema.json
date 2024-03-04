@@ -4,7 +4,8 @@
   "info": {
     "singularName": "subject",
     "pluralName": "subjects",
-    "displayName": "Subject"
+    "displayName": "Subject",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,6 +15,24 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "room": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::room.room",
+      "inversedBy": "subjects"
+    },
+    "classes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::class.class",
+      "mappedBy": "subjects"
+    },
+    "teachers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::teacher.teacher",
+      "mappedBy": "subject"
     }
   }
 }
